@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/Genesis20/Source", VBRBAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{2AFDFA11-16D1-4F86-A442-87A531B739F6}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\DebugDLL\</OutDir>
+    <IntDir>.\DebugDLL\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.11.25503\include;C:\Program Files %28x86%29\Windows Kits\10\Include\10.0.15063.0\ucrt;C:\Program Files %28x86%29\Windows Kits\10\Include\10.0.15063.0\um;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\ReleaseDLL\</OutDir>
+    <IntDir>.\ReleaseDLL\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <AdditionalIncludeDirectories>..\SDK\DX6SDK\Include;..\Source;World;Engine;Engine\Drivers;Actor;BSP;Math;Entities;Support;Physics;VFile;Bitmap;Bitmap\Compression;..\MSDev60\Include;..\MSDev60\MFC\Include;guWorld;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_USRDLL;BUILDGENESIS;GENESISDLLVERSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\DebugDLL\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\DebugDLL\GenesisDLL.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\DebugDLL\</ObjectFileName>
+      <ProgramDataBaseFileName>.\DebugDLL\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <UseFullPaths>true</UseFullPaths>
+      <AdditionalOptions>/I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um" /I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.11.25503\include" /I"c:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared" /I"C:\Users\byksp\Documents\GitHub\Quake\WinQuake\dxsdk\SDK\INC" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\DebugDLL\GenesisDLL.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\DebugDLL\GenesisDLL.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <OutputFile>DebugDLL/Genesis.dll</OutputFile>
+      <ImportLibrary>.\DebugDLL\Genesis.lib</ImportLibrary>
+      <AdditionalDependencies>libcmtd.lib;oldnames.lib;urlmon.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>lib /OUT:$(OutDir)genesisid.lib $(IntDir)ramdll.obj $(OutDir)genesis.lib</Command>
+      <Outputs>$(OUTDIR)\genesisid.lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <AdditionalIncludeDirectories>..\SDK\DX6SDK\Include;..\Source;World;Engine;Engine\Drivers;Actor;BSP;Math;Entities;Support;Physics;VFile;Bitmap;Bitmap\Compression;..\MSDev60\Include;..\MSDev60\MFC\Include;guWorld;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_USRDLL;BUILDGENESIS;GENESISDLLVERSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\ReleaseDLL\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\ReleaseDLL\GenesisDLL.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\ReleaseDLL\</ObjectFileName>
+      <ProgramDataBaseFileName>.\ReleaseDLL\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\ReleaseDLL\GenesisDLL.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\ReleaseDLL\GenesisDLL.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <OutputFile>ReleaseDLL/Genesis.dll</OutputFile>
+      <ImportLibrary>.\ReleaseDLL\Genesis.lib</ImportLibrary>
+      <AdditionalDependencies>libcmt.lib;oldnames.lib;urlmon.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>lib /OUT:$(OutDir)genesisi.lib $(IntDir)ramdll.obj $(OutDir)genesis.lib</Command>
+      <Outputs>$(OUTDIR)\genesisi.lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Actor\actor.c" />
+    <ClCompile Include="Actor\body.c" />
+    <ClCompile Include="Actor\bodyinst.c" />
+    <ClCompile Include="Actor\motion.c" />
+    <ClCompile Include="Actor\path.c" />
+    <ClCompile Include="Actor\pose.c" />
+    <ClCompile Include="Actor\puppet.c" />
+    <ClCompile Include="Actor\QKFrame.c" />
+    <ClCompile Include="Actor\strblock.c" />
+    <ClCompile Include="Actor\tkarray.c" />
+    <ClCompile Include="Actor\tkevents.c" />
+    <ClCompile Include="Actor\vkframe.c" />
+    <ClCompile Include="Actor\XFArray.c" />
+    <ClCompile Include="Bitmap\bitmap.c" />
+    <ClCompile Include="Bitmap\bitmap_blitdata.c" />
+    <ClCompile Include="Bitmap\bitmap_gamma.c" />
+    <ClCompile Include="Bitmap\Compression\palcreate.c" />
+    <ClCompile Include="Bitmap\Compression\palettize.c" />
+    <ClCompile Include="Bitmap\Compression\paloptimize.c" />
+    <ClCompile Include="Bitmap\Compression\yuv.c" />
+    <ClCompile Include="Bitmap\pixelformat.c" />
+    <ClCompile Include="Camera.c" />
+    <ClCompile Include="CSNetMgr.c" />
+    <ClCompile Include="Engine\BitmapList.c" />
+    <ClCompile Include="Engine\engine.c" />
+    <ClCompile Include="Engine\fontbmp.c" />
+    <ClCompile Include="Engine\Logo\A_CORONA.c" />
+    <ClCompile Include="Engine\Logo\A_STREAK.c" />
+    <ClCompile Include="Engine\Logo\CORONA.c" />
+    <ClCompile Include="Engine\Logo\electric.c" />
+    <ClCompile Include="Engine\Logo\logo.c" />
+    <ClCompile Include="Engine\Logo\LogoActor.c" />
+    <ClCompile Include="Engine\Logo\streak.c" />
+    <ClCompile Include="Engine\Logo\WebUrl.c" />
+    <ClCompile Include="Engine\System.c" />
+    <ClCompile Include="Entities\Entities.c" />
+    <ClCompile Include="Font\font.c" />
+    <ClCompile Include="Font\wgClip.c" />
+    <ClCompile Include="Ge.c" />
+    <ClCompile Include="list.c" />
+    <ClCompile Include="Math\Box.c" />
+    <ClCompile Include="Math\crc32.c" />
+    <ClCompile Include="Math\ExtBox.c" />
+    <ClCompile Include="Math\quatern.c" />
+    <ClCompile Include="Math\Vec3d.c" />
+    <ClCompile Include="Math\Xform3d.c" />
+    <ClCompile Include="Netplay.c" />
+    <ClCompile Include="Physics\matrix33.c" />
+    <ClCompile Include="Physics\PhysicsJoint.c" />
+    <ClCompile Include="Physics\PhysicsObject.c" />
+    <ClCompile Include="Physics\PhysicsSystem.c" />
+    <ClCompile Include="Sound.c" />
+    <ClCompile Include="Sound3d.c" />
+    <ClCompile Include="Support\Errorlog.c" />
+    <ClCompile Include="Support\geAssert.c" />
+    <ClCompile Include="Support\log.c" />
+    <ClCompile Include="Support\mempool.c" />
+    <ClCompile Include="Support\Ram.c" />
+    <ClCompile Include="Support\ramdll.c" />
+    <ClCompile Include="Tclip.c" />
+    <ClCompile Include="timer.c" />
+    <ClCompile Include="tsc.c" />
+    <ClCompile Include="VFile\dirtree.c" />
+    <ClCompile Include="VFile\fsdos.c" />
+    <ClCompile Include="VFile\Fsmemory.c" />
+    <ClCompile Include="VFile\fsvfs.c" />
+    <ClCompile Include="VFile\vfile.c" />
+    <ClCompile Include="World\Fog.c" />
+    <ClCompile Include="World\Frustum.c" />
+    <ClCompile Include="World\Gbspfile.c" />
+    <ClCompile Include="World\Light.c" />
+    <ClCompile Include="World\Plane.c" />
+    <ClCompile Include="World\Surface.c" />
+    <ClCompile Include="World\Trace.c" />
+    <ClCompile Include="World\User.c" />
+    <ClCompile Include="World\Vis.c" />
+    <ClCompile Include="World\WBitmap.c" />
+    <ClCompile Include="World\World.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.11.25503\include\vcruntime.h" />
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h" />
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt.h" />
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\math.h" />
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\memory.h" />
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared\winapifamily.h" />
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\corecrt_memory.h" />
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um\Windows.h" />
+    <ClInclude Include="Actor\actor.h" />
+    <ClInclude Include="Actor\body.h" />
+    <ClInclude Include="Actor\bodyinst.h" />
+    <ClInclude Include="Actor\motion.h" />
+    <ClInclude Include="Actor\path.h" />
+    <ClInclude Include="Actor\pose.h" />
+    <ClInclude Include="Actor\puppet.h" />
+    <ClInclude Include="Actor\QKFrame.h" />
+    <ClInclude Include="Actor\strblock.h" />
+    <ClInclude Include="Actor\tkarray.h" />
+    <ClInclude Include="Actor\tkevents.h" />
+    <ClInclude Include="Actor\vkframe.h" />
+    <ClInclude Include="Actor\xfarray.h" />
+    <ClInclude Include="Bitmap\bitmap.h" />
+    <ClInclude Include="Bitmap\bitmap_blitdata.h" />
+    <ClInclude Include="Bitmap\bitmap_gamma.h" />
+    <ClInclude Include="Bitmap\Compression\image.h" />
+    <ClInclude Include="Bitmap\Compression\palcreate.h" />
+    <ClInclude Include="Bitmap\Compression\palettize.h" />
+    <ClInclude Include="Bitmap\Compression\paloptimize.h" />
+    <ClInclude Include="Bitmap\Compression\utility.h" />
+    <ClInclude Include="Bitmap\Compression\yuv.h" />
+    <ClInclude Include="Bitmap\pixelformat.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CSNetMgr.h" />
+    <ClInclude Include="Engine\BitmapList.h" />
+    <ClInclude Include="Engine\engine.h" />
+    <ClInclude Include="Engine\Logo\electric.h" />
+    <ClInclude Include="Engine\System.h" />
+    <ClInclude Include="Entities\Entities.h" />
+    <ClInclude Include="Font\font.H" />
+    <ClInclude Include="Font\wgClip.H" />
+    <ClInclude Include="Genesis.h" />
+    <ClInclude Include="getypes.h" />
+    <ClInclude Include="list.h" />
+    <ClInclude Include="Math\Box.h" />
+    <ClInclude Include="Math\crc32.h" />
+    <ClInclude Include="Math\ExtBox.h" />
+    <ClInclude Include="Math\quatern.h" />
+    <ClInclude Include="Math\Vec3d.h" />
+    <ClInclude Include="Math\Xform3d.h" />
+    <ClInclude Include="Netplay.h" />
+    <ClInclude Include="Physics\matrix33.h" />
+    <ClInclude Include="Physics\PhysicsJoint.h" />
+    <ClInclude Include="Physics\PhysicsObject.h" />
+    <ClInclude Include="Physics\PhysicsSystem.h" />
+    <ClInclude Include="Ptrtypes.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Sound.h" />
+    <ClInclude Include="Sound3d.h" />
+    <ClInclude Include="Support\Basetype.h" />
+    <ClInclude Include="Support\Errorlog.h" />
+    <ClInclude Include="Support\geAssert.h" />
+    <ClInclude Include="Support\log.h" />
+    <ClInclude Include="Support\mempool.h" />
+    <ClInclude Include="Support\Ram.h" />
+    <ClInclude Include="tclip.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="tsc.h" />
+    <ClInclude Include="VFile\dirtree.h" />
+    <ClInclude Include="VFile\fsdos.h" />
+    <ClInclude Include="VFile\Fsmemory.h" />
+    <ClInclude Include="VFile\fsvfs.h" />
+    <ClInclude Include="VFile\vfile.h" />
+    <ClInclude Include="World\Fog.h" />
+    <ClInclude Include="World\Frustum.h" />
+    <ClInclude Include="World\Gbspfile.h" />
+    <ClInclude Include="World\Light.h" />
+    <ClInclude Include="World\Plane.h" />
+    <ClInclude Include="World\Surface.h" />
+    <ClInclude Include="World\Trace.h" />
+    <ClInclude Include="World\User.h" />
+    <ClInclude Include="World\Vis.h" />
+    <ClInclude Include="World\WBitmap.h" />
+    <ClInclude Include="World\World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Bitmap\bitmap._h" />
+    <CustomBuild Include="Bitmap\bitmap.__h" />
+    <CustomBuild Include="GenesisDLL.mak">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="genesis.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Sdk\Dx6sdk\Lib\dxguid.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
